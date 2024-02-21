@@ -3,9 +3,13 @@
 ## Latihan: Playtest
 
 ### 1. Apa saja pesan log yang dicetak pada panel  Output?
+<img width="158" alt="image" src="https://github.com/farahaulita/tutorial-2-gamedev/assets/92159879/6c8f083e-723c-4471-9814-ac674c2faa47">
+
 Pada saat game dijalankan, terdapat log "Platform initialized". ketika BlueShip mencapai bagian atas, muncul log "Reached objective!"
 
 ### 2. Coba gerakkan landasan ke batas area bawah, lalu gerakkan kembali ke atas hingga hampir menyentuh batas atas. Apa saja pesan log yang dicetak pada panel Output?
+![image](https://github.com/farahaulita/tutorial-2-gamedev/assets/92159879/463c69ad-8b37-433c-a0cd-46cbae99c312)
+
 Saat landasan digerakkan ke bawah lalu digerakkan kembali ke atas, pesan log "Reached objective!" muncul kembali.
 
 ### 3. Buka scene MainLevel dengan tampilan workspace 2D. Apakah lokasi scene ObjectiveArea memiliki kaitan dengan pesan log yang dicetak pada panel Output pada percobaan sebelumnya?
