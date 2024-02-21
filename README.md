@@ -31,7 +31,7 @@ Mass akan otomatis mengubah weight dan begitu juga sebaliknya. Mass yang lebih b
 BlueShip tidak berhenti atau tertahan di ata StonePlatform seperti biasanya dan terus jatuh menembus StonePlatform.
 
 ### 5. Pada scene MainLevel, coba manipulasi atribut Position, Rotation, dan Scale milik node BlueShip secara bebas. Apa yang terjadi pada visualisasi BlueShip di Viewport?
-Jika Position diubah, maka posisi dari BlueShip juga berubah sesusai dengan nilai yang dimasukkan. Jika Rotation diubah, maka BlueShip akan diputar, sehingga bagian atas ship dapat menghadap arah yang berbeda. Mengubah scale akan mengubah ukuran dari BlueShip.
+Jika Position diubah, maka posisi dari BlueShip juga berubah sesusai dengan nilai yang dimasukkan. Jika Rotation diubah, maka BlueShip akan diputar, sehingga bagian atas ship dapat menghadap arah yang berbeda. Mengubah scale akan mengubah ukuran dari BlueShip. Perubahan ini juga akan diterapkan ke semua child node dari BlueShip, yaitu Sprite dan CollisionShape2D.
 
 ### 6. Pada scene MainLevel, perhatikan nilai atribut Position node PlatformBlue, StonePlatform, dan StonePlatform2. Mengapa nilai Position node StonePlatform dan StonePlatform2 tidak sesuai dengan posisinya di dalam scene (menurut Inspector) namun visualisasinya berada di posisi yang tepat?
 Ini terjadi karena StonePlatform dan Stoneplatform2 merupakan child node dari PlatformBlue. Posisi child node bersifat relatif terhadap node parentnya. Posisi dari StonePlatform dan StonePlatform2 menunjukkan posisi relatif dari node parent yaitu PlatformBlue. Jika posisi PlatformBlue diubah, posisi semua child nodenya juga akan ikut berubah mengikti parentnya.
