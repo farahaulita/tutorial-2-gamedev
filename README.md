@@ -21,6 +21,7 @@ Node RigidBody2D mengimplementasikan physics 2D. Node ini tidak dapat dikendalik
 Node StaticBody2 adalah sebuah objek statis yang tidak akan bergerak jika ada pengaruh eksternal, misalnya gravitasi atau tabrakan, namun dapat digerakkan menggunakan code, AnimationMixers, dan RemoteTransform2D.
 
 ### 3. Ubah nilai atribut Mass dan Weight pada tipe RigidBody2D secara bebas di scene BlueShip, lalu coba jalankan scene MainLevel. Apa yang terjadi?
+Mass akan otomatis mengubah weight dan begitu juga sebaliknya. Mass yang lebih besar akan membuat objek lebi sulit untuk didorong. Namun, untu BlueShip, sepertinya tidak terlihat perbedaan antara mass yang kecil dengan mass yang besar.
 
 ### 4. Ubah nilai atribut Disabled pada tipe CollisionShape2D di scene StonePlatform, lalu coba jalankan scene MainLevel. Apa yang terjadi?
 BlueShip tidak berhenti atau tertahan di ata StonePlatform seperti biasanya dan terus jatuh menembus StonePlatform.
@@ -29,4 +30,4 @@ BlueShip tidak berhenti atau tertahan di ata StonePlatform seperti biasanya dan 
 Jika Position diubah, maka posisi dari BlueShip juga berubah sesusai dengan nilai yang dimasukkan. Jika Rotation diubah, maka BlueShip akan diputar, Sehinnga bagian atas ship dapat menghadap arah yang berbeda. Mengubah scale akan mengubah ukuran dari BlueShip.
 
 ### 6. Pada scene MainLevel, perhatikan nilai atribut Position node PlatformBlue, StonePlatform, dan StonePlatform2. Mengapa nilai Position node StonePlatform dan StonePlatform2 tidak sesuai dengan posisinya di dalam scene (menurut Inspector) namun visualisasinya berada di posisi yang tepat?
-Ini terjadi karena StonePlatform dan Stoneplatform2 merupakan child node dari PlatformBlue. Posisi child node bersifat relatif terhadap node parentnya.
+Ini terjadi karena StonePlatform dan Stoneplatform2 merupakan child node dari PlatformBlue. Posisi child node bersifat relatif terhadap node parentnya. Posisi dari StonePlatform dan StonePlatform2 menunjukkan posisi relatif dari node parent yaitu PlatformBlue. Jika posisi PlatformBlue diubah, posisi semua child nodenya juga akan ikut berubah mengikti parentnya.
