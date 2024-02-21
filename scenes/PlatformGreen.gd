@@ -1,4 +1,4 @@
-	extends Node2D
+extends Node2D
 
 export var speed = 500.0
 
@@ -13,7 +13,9 @@ func _process(delta):
 	
 	if Input.is_action_pressed("move_down"):
 		move_local_y(speed * delta)
-
-
-func _on_Area2D_body_entered(body):
-	pass # Replace with function body.
+		
+	if Input.is_action_pressed("move_left"):
+		move_local_x(-speed * delta)
+	
+	if Input.is_action_pressed("move_right"):
+		move_local_x(speed * delta)

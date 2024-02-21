@@ -1,0 +1,79 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://scenes/GreenShip.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/Area2D.gd" type="Script" id=2]
+[ext_resource path="res://scenes/PlatformGreen.gd" type="Script" id=3]
+[ext_resource path="res://scenes/ObjectiveArea.gd" type="Script" id=4]
+[ext_resource path="res://scenes/SnowPlatform.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/MeteorObstacle.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/nightsky.jpg" type="Texture" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 68, 39 )
+
+[node name="SecondLevel" type="Node"]
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="Background"]
+light_mask = 2
+margin_left = 4.0
+margin_right = 1032.0
+margin_bottom = 598.0
+texture = ExtResource( 7 )
+expand = true
+
+[node name="GreenShip" parent="." instance=ExtResource( 1 )]
+position = Vector2( 76, 445 )
+
+[node name="ObjectiveArea" type="Area2D" parent="."]
+script = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ObjectiveArea"]
+position = Vector2( 956, 38 )
+shape = SubResource( 1 )
+
+[node name="PlatformGreen" type="Node2D" parent="."]
+script = ExtResource( 3 )
+
+[node name="Snow Platform" parent="PlatformGreen" instance=ExtResource( 5 )]
+position = Vector2( -6, 520 )
+
+[node name="Snow Platform2" parent="PlatformGreen" instance=ExtResource( 5 )]
+position = Vector2( -5, 449 )
+
+[node name="Snow Platform3" parent="PlatformGreen" instance=ExtResource( 5 )]
+position = Vector2( 64, 520 )
+
+[node name="Snow Platform4" parent="PlatformGreen" instance=ExtResource( 5 )]
+position = Vector2( 134, 520 )
+
+[node name="Meteors" type="Node2D" parent="."]
+
+[node name="MeteorObstacle" parent="Meteors" instance=ExtResource( 6 )]
+position = Vector2( 699, 16 )
+collision_layer = 15
+
+[node name="MeteorObstacle2" parent="Meteors" instance=ExtResource( 6 )]
+position = Vector2( 676, 139 )
+
+[node name="MeteorObstacle6" parent="Meteors" instance=ExtResource( 6 )]
+position = Vector2( 705, 251 )
+
+[node name="MeteorObstacle3" parent="Meteors" instance=ExtResource( 6 )]
+position = Vector2( 388, 499 )
+
+[node name="MeteorObstacle4" parent="Meteors" instance=ExtResource( 6 )]
+position = Vector2( 368, 379 )
+
+[node name="MeteorObstacle5" parent="Meteors" instance=ExtResource( 6 )]
+position = Vector2( 369, 260 )
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PoolVector2Array( 0, 16, -5, 603, 1036, 600, 1041, -6, -12, 4, -9, -96, 1127, -88, 1145, 680, -78, 676, -77, -7, -5, -102 )
+
+[connection signal="body_entered" from="ObjectiveArea" to="ObjectiveArea" method="_on_ObjectiveArea_body_entered"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]
